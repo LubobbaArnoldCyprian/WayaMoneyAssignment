@@ -22,36 +22,38 @@ class LoginPage:
 # Login
 
     def set_user_email(self, email):
-        self.driver.find_element(By.XPATH, self.textbox_email_xpath).clear()
-        self.driver.find_element(By.XPATH, self.textbox_email_xpath).send_keys(email)
+        set_user_emai_field = self.driver.find_element(By.XPATH, self.textbox_email_xpath)
+        set_user_emai_field.clear()
+        set_user_emai_field.send_keys(email)
 
     def set_password(self, password):
-        self.driver.find_element(By.XPATH, self.textbox_password_xpath).clear()
-        self.driver.find_element(By.XPATH, self.textbox_password_xpath).send_keys(password)
+        set_password_field = self.driver.find_element(By.XPATH, self.textbox_password_xpath)
+        set_password_field.clear()
+        set_password_field.send_keys(password)
 
-    def clickLogin(self):
+    def click_login(self):
         self.driver.find_element(By.XPATH, self.button_login_xpath).click()
 
-    def clickCookie(self):
+    def click_cookie(self):
         self.driver.find_element(By.XPATH, self.button_cookies_xpath).click()
 
 # Post message
 
-    def clickInitial(self):
+    def click_initial(self):
         time.sleep(10)
-        element = self.driver.find_element(By.XPATH, self.button_initial_xpath)
-        element.click()
+        self.driver.find_element(By.XPATH, self.button_initial_xpath).click()
 
-    def inputMessage(self, post):
-        self.driver.find_element(By.XPATH, self.textfield_content_xpath).click()
-        self.driver.find_element(By.XPATH, self.textfield_content_xpath).send_keys(post)
+    def input_message(self, post):
+        input_message_field = self.driver.find_element(By.XPATH, self.textfield_content_xpath)
+        input_message_field.click()
+        input_message_field.send_keys(post)
 
-    def clickPost(self):
+    def click_post(self):
         self.driver.find_element(By.XPATH, self.button_post_xpath).click()
 
 # click Logout
-    def clickAccount(self):
+    def click_account(self):
         self.driver.find_element(By.XPATH, self.button_account_xpath).click()
 
-    def clickLogout(self):
+    def click_logout(self):
         self.driver.find_element(By.XPATH, self.button_logout_xpath).click()
