@@ -18,18 +18,18 @@ class Test_001_Login:
         self.driver = setup
         self.driver.get(self.baseURL)
         self.lp = LoginPage(self.driver)
-        self.lp.clickCookie()
+        self.lp.click_cookie()
         self.lp.set_user_email(self.user_email)
         self.lp.set_password(self.password)
-        self.lp.clickLogin()
+        self.lp.click_login()
 #postMessage
-        self.lp.clickInitial()
-        self.lp.inputMessage(self.post)
-        self.lp.clickPost()
+        self.lp.click_initial()
+        self.lp.input_message(self.post)
+        self.lp.click_post()
         time.sleep(5)
 #logout
-        self.lp.clickAccount()
-        self.lp.clickLogout()
+        self.lp.click_account()
+        self.lp.click_logout()
         self.driver.close()
 
 
